@@ -1,0 +1,226 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>quick filter table plug-in</title>
+	<meta content="JQuery plugin table">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">	
+</head>
+
+<body>
+	<article class="container">
+		<section>
+			<div id="PieroBlundaDiv"></div>
+			
+            <div class="page-header">
+              <h1>Example page header <small>Subtext for header</small></h1>
+            </div>
+          
+            <div class="row">
+              <div class="col-md-6">
+                <table id="tablaDatos" class="table table-striped">
+<thead><tr><th>Position</th><th>Programming Language</th><th>Ratings</th></tr></thead>
+<tbody>
+<tr> <td>1</td><td>Java</td><td>16.041%</td></tr><tr> <td>2</td><td>C</td><td>15.745%</td></tr><tr> <td>3</td><td>C++</td><td>6.962%</td></tr><tr> <td>4</td><td>Objective-C</td><td>5.890%</td></tr><tr> <td>5</td><td>C#</td><td>4.947%</td></tr><tr> <td>6</td><td>JavaScript</td><td>3.297%</td></tr><tr> <td>7</td><td>PHP</td><td>3.009%</td></tr><tr> <td>8</td><td>Python</td><td>2.690%</td></tr><tr> <td>9</td><td>Visual Basic</td><td>2.199%</td></tr><tr> <td>10</td><td>Visual Basic .NET</td><td>2.126%</td></tr><tr> <td>11</td><td>Delphi/Object Pascal</td><td>1.469%</td></tr><tr> <td>12</td><td>Perl</td><td>1.340%</td></tr><tr> <td>13</td><td>Transact-SQL</td><td>1.275%</td></tr><tr> <td>14</td><td>MATLAB</td><td>1.263%</td></tr><tr> <td>15</td><td>ABAP</td><td>1.228%</td></tr><tr> <td>16</td><td>F#</td><td>1.196%</td></tr><tr> <td>17</td><td>PL/SQL</td><td>1.110%</td></tr><tr> <td>18</td><td>Ruby</td><td>1.068%</td></tr><tr> <td>19</td><td>R</td><td>1.028%</td></tr><tr> <td>20</td><td>Pascal</td><td>1.027%</td></tr><tr><td>21</td><td>SAS</td><td>1.001%</td></tr><tr><td>22</td><td>PostScript</td><td>0.954%</td></tr><tr><td>23</td><td>ML</td><td>0.890%</td></tr><tr><td>24</td><td>Swift</td><td>0.882%</td></tr><tr><td>25</td><td>Scala</td><td>0.873%</td></tr><tr><td>26</td><td>Logo</td><td>0.783%</td></tr><tr><td>27</td><td>COBOL</td><td>0.744%</td></tr><tr><td>28</td><td>J</td><td>0.706%</td></tr><tr><td>29</td><td>Assembly</td><td>0.656%</td></tr><tr><td>30</td><td>Fortran</td><td>0.600%</td></tr><tr><td>31</td><td>Scratch</td><td>0.587%</td></tr><tr><td>32</td><td>OpenEdge ABL</td><td>0.543%</td></tr><tr><td>33</td><td>Lisp</td><td>0.503%</td></tr><tr><td>34</td><td>Ada</td><td>0.454%</td></tr><tr><td>35</td><td>ActionScript</td><td>0.415%</td></tr><tr><td>36</td><td>Max/MSP</td><td>0.408%</td></tr><tr><td>37</td><td>Lua</td><td>0.403%</td></tr><tr><td>38</td><td>D</td><td>0.403%</td></tr><tr><td>39</td><td>Prolog</td><td>0.349%</td></tr><tr><td>40</td><td>RPG (OS/400)</td><td>0.330%</td></tr><tr><td>41</td><td>Inform</td><td>0.305%</td></tr><tr><td>42</td><td>Go</td><td>0.297%</td></tr><tr><td>43</td><td>Groovy</td><td>0.292%</td></tr><tr><td>44</td><td>PL/I</td><td>0.265%</td></tr><tr><td>45</td><td>Scheme</td><td>0.263%</td></tr><tr><td>46</td><td>Q</td><td>0.261%</td></tr><tr><td>47</td><td>LabVIEW</td><td>0.260%</td></tr><tr><td>48</td><td>C shell</td><td>0.245%</td></tr><tr><td>49</td><td>VBScript</td><td>0.242%</td></tr><tr><td>50</td><td>Erlang</td><td>0.239%</td></tr>
+</tbody>
+</table>
+              </div>
+              <div class="col-md-6">
+                Settings used on this example:
+<pre><code>$('#tablaDatos').pbTable({
+  selectable: true,
+  sortable:true,
+  toolbar:{
+    enabled:true,
+    filterBox:true,
+    buttons:['view', 'edit', 'delete']
+  },
+  pagination:{
+    enabled: true,
+    pageSize: 10
+  },
+  onView:function(){
+    alert('View button was pressed');
+  },
+  onEdit:function(){
+    alert('Edit button was pressed');
+  },
+  onDelete:function(){
+    alert('Delete button was pressed');
+  },
+  onNew:function(){
+    alert('New button was pressed');
+  }
+});</code></pre>
+              </div>
+            </div>
+		
+          </section>
+		
+<section>
+                <h1>Properties</h1>
+                <hr>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <td>Property</td>
+                            <td>Data</td>
+                            <td>Default value</td>
+                            <td>Description</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>selectable</td>
+                            <td>Boolean</td>
+                            <td>true</td>
+                            <td>Flag to allow select rows in table.</td>
+                        </tr>
+                        <tr>
+                            <td>sortable</td>
+                            <td>Boolean</td>
+                            <td>true</td>
+                            <td>Flag to allow order rows.</td>
+                        </tr>
+                        <tr>
+                            <td>toolbar.enabled</td>
+                            <td>Boolean</td>
+                            <td>true</td>
+                            <td>Flag to show toolbox</td>
+                        </tr>
+						<tr>
+                            <td>toolbar.filterBox</td>
+                            <td>Boolean</td>
+                            <td>true</td>
+                            <td>Flag to allow filter data in table</td>
+                        </tr>
+						<tr>
+                            <td>toolbar.msgSinDatos</td>
+                            <td>String</td>
+                            <td>'No se encontraron resultados.'</td>
+                            <td>This message will be shown when there are not results after filtering</td>
+                        </tr>
+						<tr>
+                            <td>toolbar.buttons</td>
+                            <td>Array de Strings</td>
+                            <td>['view', 'edit', 'delete', 'new', 'print', 'receipt'] || false</td>
+                            <td>Action buttons list  that will be shown.</td>
+                        <tr>
+                          <td>pagination.enabled</td>
+                          <td>Boolean</td>
+                          <td>true</td>
+                          <td>Enable front-end pagination</td>
+                        </tr>
+                        <tr>
+                          <td>pagination.pageSize</td>
+                          <td>Integer</td>
+                          <td>10</td>
+                          <td>Number of rows on each page</td>
+                        </tr>
+                   </tbody>
+                </table>
+  <div class="alert alert-warning" role="alert">
+            <strong>Warning! </strong>Notice that pb-table pagination do not send any request to server. Be careful when you use pagination. For performant reasons pagination is set to false by default.
+          </div>
+            </section>
+      
+            <section>
+              <h1>Translations</h1>
+              <p>You can translate pbTable by adding some extra file configurations. By defaults, pbTable offers translations to English, French and Italian, in extra than Spanish. To translate this plugin you have to inlude the extension file after call the plugin itself.</p>
+                
+              <code>
+                &lt;script src="dist/pbtable-fr_FR.js">&lt;/script>
+              </code>
+
+            </section>
+      
+            <section>
+              <h1>Change default values</h1>
+              <p>If you use pbTable in many places, and you want to re-write defaults setting you can import the preferences you want to be used on each instance of pbTable. Just add the configuration file after pbTable core. This way allow avoid modifing pbTable code.</p>
+              <code>
+                &lt;script src="dist/pbtable-defaults.js">&lt;/script>
+              </code>
+            </section>
+            
+            <section>
+                <h1>Callbacks</h1>
+                <hr>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>Description</td>
+                        </tr>
+                    </thead>    
+                    <tbody>
+                        <tr>
+                            <td>onView</td>
+                            <td>Function. It will be run after press "view"</td>
+                        </tr>
+                        <tr>
+                            <td>onEdit</td>
+                            <td>Function. It will be run after press "Editar"</td>
+                        </tr>
+						<tr>
+                            <td>onDelete</td>
+                            <td>Function. It will be run after press "Delete"</td>
+                        </tr>
+						<tr>
+                            <td>onNew</td>
+                            <td>Function. It will be run after press "Nuevo"</td>
+                        </tr>
+                        <tr>
+                            <td>onPrint</td>
+                           <td>Function. It will be run after press "Imprimir"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>		
+	</article>
+	
+	<div class="container">
+		<footer class="text-center">
+			Desarrollado por <a href="http://pieroblunda.github.io/">Piero Blunda</a> | Nov-2013 | Rosario - Argentina
+		</footer>
+	</div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="./dist/pbtable.min.js"></script>
+	<script>
+		$(document).ready(function(e) {
+			$('#tablaDatos').pbTable({
+				selectable: true,
+				sortable:true,
+                //highlight: true,
+                msgSinDatos:'Inline defaults options',
+				toolbar:{
+					enabled:true,
+					//idToAppend:'PieroBlundaDiv',
+					selectedClass:'warning',
+					filterBox:true,
+					buttons:['view', 'edit', 'delete','new']
+				},
+                pagination:{
+                  enabled: true,
+                  pageSize: 10
+                },
+				onView:function(){
+					alert('View button was pressed');
+				},
+				onEdit:function(){
+					alert('Edit button was pressed');
+				},
+				onDelete:function(){
+					alert('Delete button was pressed');
+				},
+                onNew:function(){
+					alert('New button was pressed');
+				},
+                onServerFind: function(){
+                  alert('Funciona');
+                }
+			});
+		});
+	</script>
+</body>
+</html>
